@@ -2,8 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #000; /* Change background color to black */
+    color: #f4f4f4; /* Change text color to light gray for better contrast */
 }
 
 header {
@@ -16,11 +16,13 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.5rem;
+    animation: fadeIn 2s ease-in-out;
 }
 
 header p {
     margin: 0;
     font-size: 1.2rem;
+    animation: fadeIn 2s ease-in-out 1s;
 }
 
 nav ul {
@@ -44,12 +46,21 @@ main {
 
 section {
     margin-bottom: 2rem;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+section:hover {
+    transform: scale(1.05);
+    background-color: #222;
 }
 
 section h2 {
     border-bottom: 2px solid #00bcd4;
     padding-bottom: 0.5rem;
     color: #00bcd4;
+    background-color: #333; /* Add background color to section headers */
+    padding: 0.5rem; /* Add padding to section headers */
+    animation: slideIn 1s ease-in-out;
 }
 
 ul {
@@ -63,7 +74,7 @@ ul li {
 
 ul li h3 {
     margin: 0;
-    color: #333;
+    color: #00bcd4; /* Change color to turquoise */
 }
 
 ul li p {
@@ -78,4 +89,23 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
 }
